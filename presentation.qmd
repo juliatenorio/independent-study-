@@ -1,0 +1,14 @@
+```{r} 
+options(repos = c(CRAN = "[https://cloud.r-project.org](https://cloud.r-project.org)"))
+```
+
+---
+title: "ASAM-199R Contemporary Filipino Diaspora Data"
+format: revealjs
+---
+
+# Slide 1
+
+Hello World!
+
+--- 
