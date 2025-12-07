@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="presentation_files/libs/clipboard/clipboard.min.js"></script>
+<script src="presentation_files/libs/quarto-html/tabby.min.js"></script>
+<script src="presentation_files/libs/quarto-html/popper.min.js"></script>
+<script src="presentation_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="presentation_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="presentation_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="presentation_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.26">
+
+  <title>ASAM-199R Contemporary Filipino Diaspora Data</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="presentation_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="presentation_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="presentation_files/libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
+  <link href="presentation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="presentation_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="presentation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="presentation_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <link href="presentation_files/libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+  <script src="presentation_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+  <script src="presentation_files/libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <link href="presentation_files/libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+  <script src="presentation_files/libs/leaflet-1.3.1/leaflet.js"></script>
+  <link href="presentation_files/libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+  <script src="presentation_files/libs/proj4-2.6.2/proj4.min.js"></script>
+  <script src="presentation_files/libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+  <link href="presentation_files/libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+  <script src="presentation_files/libs/leaflet-binding-2.2.2/leaflet.js"></script>
+  <script src="presentation_files/libs/leaflet-providers-2.0.0/leaflet-providers_2.0.0.js"></script>
+  <script src="presentation_files/libs/leaflet-providers-plugin-2.2.2/leaflet-providers-plugin.js"></script>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">ASAM-199R Contemporary Filipino Diaspora Data</h1>
+
+<div class="quarto-title-authors">
+</div>
+
+</section>
+<section>
+<section id="slide-1" class="title-slide slide level1 center">
+<h1>Slide 1</h1>
+<p>Hello World!</p>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section id="slide-2" class="title-slide slide level1 center">
+<h1>Slide 2</h1>
+<p>Here is a plot:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-14331bbada777e2fb7ba" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-14331bbada777e2fb7ba">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["OpenStreetMap",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addCircleMarkers","args":[[33.822655,33.822655,34.102012,34.0469,34.20416,33.8297,33.996586,34.12834,34.09538,33.951793,34.1147,33.986057,34.193,34.1884,33.8285,34.0528,33.8542,33.8542,34.10229,34.076724,34.061882,33.82,33.83163,33.8326,34.038,34.2774,34.1386,34.278,34.0822,33.8359,34.1302,33.8216,34.136034,34.131836,34.061413,34.176719,34.044895,33.73607,34.075666,34.264192,34.11805,34.204848,33.88171,34.117391,33.937198,34.002116,34.254321,33.833305,33.7936993,34.07810593,34.2681606,33.833809,34.2002879,34.0949158,34.1691171,34.11749341,34.05390243,34.31410101,34.11296985,34.10807301,34.09469707,34.03596093,34.21026969,34.28523927,34.06820302,34.2073215,34.19358856,34.24081273,34.08945794,34.1874406,33.95898806,33.94872947,34.03898471,34.21919906,34.0508635,34.24464215,34.26972766,33.80353196,33.94912605,34.22318507,34.31225919,34.22730787,34.21675702,34.24021756,34.06670612,34.28042552,33.91184378,34.21515467,33.83419186,34.22421919,34.12496375,33.882275,34.13339753,34.23148947,34.07248817,33.7305752,34.08974495,34.05797664,34.08186887,34.03853478,33.95224557,34.09556411,33.82644338,34.30672042,34.12123524,33.85840818,33.81436331,34.05989372,34.26040105,34.23650531,34.22932432,33.83896101,34.08827066,34.07424614,34.25411453,33.96785582,34.11696781,33.96717044,33.79801764,34.0632559],[-118.274237,-118.274237,-118.25183,-118.2645,-118.51405,-118.2575,-118.462958,-118.18646,-118.22563,-118.187601,-118.254,-118.288138,-118.3978,-118.5032,-118.2602,-118.2171,-118.2397,-118.2397,-118.18909,-118.265066,-118.267059,-118.28,-118.28171,-118.2752,-118.3984,-118.7886,-118.199,-118.475,-118.2883,-118.2401,-118.2253,-118.2734,-118.212952,-118.206527,-118.255017,-118.523409,-118.250577,-118.29122,-118.289095,-118.390793,-118.24062,-118.527813,-118.286964,-118.182958,-118.304564,-118.429194,-118.421714,-118.3015377,-118.3029621,-118.3045883,-118.4776916,-118.0659501,-118.4398915,-118.3136764,-118.5696793,-118.2010032,-118.3045183,-118.423875,-118.2423902,-118.2770238,-118.3169512,-118.3125234,-118.3931038,-118.4920961,-118.2707693,-118.4575671,-118.5139378,-118.4451947,-118.28754,-118.5067876,-118.2861767,-118.3102746,-118.2101071,-118.4527636,-118.2936361,-118.414661,-118.3030784,-118.3052562,-118.2945381,-118.4605729,-118.4501993,-118.4568717,-118.4492088,-118.4597863,-118.2192397,-118.381046,-118.3191317,-118.4338134,-118.2149985,-118.4072638,-118.0289901,-118.3003073,-118.1943671,-118.4606199,-118.2693179,-118.2986982,-118.315041,-118.2603946,-118.1689248,-118.2968559,-118.1987575,-118.3134767,-118.2846752,-118.4401334,-118.2173668,-118.267373,-118.2810111,-118.2978091,-118.5025251,-118.4880177,-118.4353026,-118.2880563,-118.3262129,-118.290588,-118.2549122,-118.2228685,-118.2405049,-118.3875583,-118.2738611,-118.2894131],[10,38,6,4,2,12,1,2,1,0,5,0,1,2,19,1,1,8,3,2,1,25,12,16,1,2,5,4,4,18,13,11,8,12,2,2,1,6,0,2,4,3,1,2,0,0,1,9,1,6,6,0,1,2,0,4,2,2,5,6,2,2,2,6,9,3,2,3,5,1,0,0,0,4,1,1,2,3,0,2,1,1,3,5,1,2,1,3,4,4,1,2,7.000000000000001,2,17,2,0,0,1,2,0,3,11,1,13,5,23,4,6,4,3,12,3,6,3,0,4,5,1,1],null,null,{"interactive":true,"className":"","stroke":false,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":["#56147D","#FCFDBF","#29115B","#160F3B","#07061D","#6B1D81","#03030E","#07061D","#03030E","#000004","#1F114A","#000004","#03030E","#07061D","#B6367A","#03030E","#03030E","#400F73","#0E0B2B","#07061D","#03030E","#EF5D5E","#6B1D81","#952C80","#03030E","#07061D","#1F114A","#160F3B","#160F3B","#AB337C","#752181","#601880","#400F73","#6B1D81","#07061D","#07061D","#03030E","#29115B","#000004","#07061D","#160F3B","#0E0B2B","#03030E","#07061D","#000004","#000004","#03030E","#4B1079","#03030E","#29115B","#29115B","#000004","#03030E","#07061D","#000004","#160F3B","#07061D","#07061D","#1F114A","#29115B","#07061D","#07061D","#07061D","#29115B","#4B1079","#0E0B2B","#07061D","#0E0B2B","#1F114A","#03030E","#000004","#000004","#000004","#160F3B","#03030E","#03030E","#07061D","#0E0B2B","#000004","#07061D","#03030E","#03030E","#0E0B2B","#1F114A","#03030E","#07061D","#03030E","#0E0B2B","#160F3B","#160F3B","#03030E","#07061D","#341069","#07061D","#A02F7F","#07061D","#000004","#000004","#03030E","#07061D","#000004","#0E0B2B","#601880","#03030E","#752181","#1F114A","#DF4B68","#160F3B","#29115B","#160F3B","#0E0B2B","#6B1D81","#0E0B2B","#29115B","#0E0B2B","#000004","#160F3B","#1F114A","#03030E","#03030E"],"fillOpacity":0.8},null,null,["<b>academies of education and empowerment at carson high<\/b><br>Percent Filipino: 10%<br>Number of Students: 474","<b>academy of medical arts at carson high<\/b><br>Percent Filipino: 38%<br>Number of Students: 438","<b>allesandro elementary<\/b><br>Percent Filipino: 6%<br>Number of Students: 267","<b>ambassador school global education<\/b><br>Percent Filipino: 4%<br>Number of Students: 332","<b>anatola avenue elementary<\/b><br>Percent Filipino: 2%<br>Number of Students: 269","<b>andrew carnegie middle<\/b><br>Percent Filipino: 12%<br>Number of Students: 843","<b>amino venice charter high<\/b><br>Percent Filipino: 1%<br>Number of Students: 335","<b>annandale elementary<\/b><br>Percent Filipino: 2%<br>Number of Students: 90","<b>aragon avenue elementary<\/b><br>Percent Filipino: 1%<br>Number of Students: 205","<b>aspire gatway academy charter<\/b><br>Percent Filipino: 0%<br>Number of Students: 344","<b>atwater avenue elementary<\/b><br>Percent Filipino: 5%<br>Number of Students: 332","<b>augustus hawkins high<\/b><br>Percent Filipino: 0%<br>Number of Students: 1122","<b>bellingham elementary<\/b><br>Percent Filipino: 1%<br>Number of Students: 390","<b>birmingham community charter high<\/b><br>Percent Filipino: 2%<br>Number of Students: 3162","<b>bonita street elementary<\/b><br>Percent Filipino: 19%<br>Number of Students: 399","<b>bridge street elementary<\/b><br>Percent Filipino: 1%<br>Number of Students: 180","<b>broadacres avenue elementary visual & performing arts magnet<\/b><br>Percent Filipino: 1%<br>Number of Students: 275","<b>burton street elementary<\/b><br>Percent Filipino: 8%<br>Number of Students: 274","<b>bushnell way elementary<\/b><br>Percent Filipino: 3%<br>Number of Students: 157","<b>camino nuevo charter academy #4<\/b><br>Percent Filipino: 2%<br>Number of Students: 475","<b>camino nuevo charter academy #2<\/b><br>Percent Filipino: 1%<br>Number of Students: 711","<b>caroldale learning community<\/b><br>Percent Filipino: 25%<br>Number of Students: 620","<b>carson senior high<\/b><br>Percent Filipino: 12%<br>Number of Students: 1407","<b>carson street elementary<\/b><br>Percent Filipino: 16%<br>Number of Students: 623","<b>castle heights elementary<\/b><br>Percent Filipino: 1%<br>Number of Students: 501","<b>computer science virtual academy<\/b><br>Percent Filipino: 2%<br>Number of Students: 765","<b>dahlia heights elementary<\/b><br>Percent Filipino: 5%<br>Number of Students: 410","<b>danube avenue elementary<\/b><br>Percent Filipino: 4%<br>Number of Students: 259","<b>dayton heights elementary<\/b><br>Percent Filipino: 4%<br>Number of Students: 214","<b>del amo elementary<\/b><br>Percent Filipino: 18%<br>Number of Students: 285","<b>delevan drive elementary<\/b><br>Percent Filipino: 13%<br>Number of Students: 483","<b>dolores street elementary<\/b><br>Percent Filipino: 11%<br>Number of Students: 370","<b>eagle rock elementary<\/b><br>Percent Filipino: 8%<br>Number of Students: 755","<b>eagle rock high<\/b><br>Percent Filipino: 12%<br>Number of Students: 2031","<b>edward r. roybal learning center<\/b><br>Percent Filipino: 2%<br>Number of Students: 1130","<b>emelita street elementary<\/b><br>Percent Filipino: 2%<br>Number of Students: 275","<b>equitas academy #3 charter<\/b><br>Percent Filipino: 1%<br>Number of Students: 435","<b>ernest p. wilenberg special education center<\/b><br>Percent Filipino: 6%<br>Number of Students: 166","<b>everest value<\/b><br>Percent Filipino: 0%<br>Number of Students: 380","<b>fenton avenue charter<\/b><br>Percent Filipino: 2%<br>Number of Students: 746","<b>fletcher drive elementary<\/b><br>Percent Filipino: 4%<br>Number of Students: 156","<b>garden grove elementary<\/b><br>Percent Filipino: 3%<br>Number of Students: 306","<b>gardena elementary<\/b><br>Percent Filipino: 1%<br>Number of Students: 398","<b>garvanza elementary school technology and leadership magnet<\/b><br>Percent Filipino: 2%<br>Number of Students: 239","<b>george washington prepatory high<\/b><br>Percent Filipino: 0%<br>Number of Students: 738","<b>grand view boulevard elementary<\/b><br>Percent Filipino: 0%<br>Number of Students: 510","<b>haddon avenue elementary<\/b><br>Percent Filipino: 1%<br>Number of Students: 590","<b>halldale elementary<\/b><br>Percent Filipino: 9%<br>Number of Students: 425","<b>harbor city elementary<\/b><br>Percent Filipino: 1%<br>Number of Students: 420","<b>harvard elementary<\/b><br>Percent Filipino: 6%<br>Number of Students: 249","<b>haskell elementary STEAM<\/b><br>Percent Filipino: 6%<br>Number of Students: 560","<b>hawaiian avenue elementary<\/b><br>Percent Filipino: 0%<br>Number of Students: 455","<b>hazeltine avenue elementary<\/b><br>Percent Filipino: 1%<br>Number of Students: 621","<b>helen bernstein high<\/b><br>Percent Filipino: 2%<br>Number of Students: 703","<b>henry david thoreau continuation<\/b><br>Percent Filipino: 0%<br>Number of Students: 44","<b>highland park continuation<\/b><br>Percent Filipino: 4%<br>Number of Students: 55","<b>hobart boulevard elementary<\/b><br>Percent Filipino: 2%<br>Number of Students: 420","<b>hubbard street elementary<\/b><br>Percent Filipino: 2%<br>Number of Students: 535","<b>ISANA Octavia Academy<\/b><br>Percent Filipino: 5%<br>Number of Students: 363","<b>john marshall senior high<\/b><br>Percent Filipino: 6%<br>Number of Students: 1842","<b>joseph le conte middle<\/b><br>Percent Filipino: 2%<br>Number of Students: 627","<b>joseph pomeroy widney career prepatory and transition center<\/b><br>Percent Filipino: 2%<br>Number of Students: 264","<b>julie korenstein elementary<\/b><br>Percent Filipino: 2%<br>Number of Students: 311","<b>knollwood prepatory academy<\/b><br>Percent Filipino: 6%<br>Number of Students: 381","<b>lake street primary<\/b><br>Percent Filipino: 9%<br>Number of Students: 104","<b>lashon academy<\/b><br>Percent Filipino: 3%<br>Number of Students: 595","<b>lemay street elementary<\/b><br>Percent Filipino: 2%<br>Number of Students: 334","<b>liggett street elementary<\/b><br>Percent Filipino: 3%<br>Number of Students: 550","<b>lockwood avenue elementary<\/b><br>Percent Filipino: 5%<br>Number of Students: 285","<b>magnolia science academy 2<\/b><br>Percent Filipino: 1%<br>Number of Students: 514","<b>manchester avenue elementary<\/b><br>Percent Filipino: 0%<br>Number of Students: 509","<b>manhattan place elementary<\/b><br>Percent Filipino: 0%<br>Number of Students: 218","<b>math science & technology magnet academy at roosevelt high<\/b><br>Percent Filipino: 0%<br>Number of Students: 534","<b>michelle obama elementary<\/b><br>Percent Filipino: 4%<br>Number of Students: 570","<b>monsenor oscar romero charter middle<\/b><br>Percent Filipino: 1%<br>Number of Students: 298","<b>montague charter academy<\/b><br>Percent Filipino: 1%<br>Number of Students: 852","<b>mt. gleason middle<\/b><br>Percent Filipino: 2%<br>Number of Students: 753","<b>nathaniel narbonne senior high<\/b><br>Percent Filipino: 3%<br>Number of Students: 1549","<b>ninety-fifth street elementary<\/b><br>Percent Filipino: 0%<br>Number of Students: 745","<b>noble avenue elementary<\/b><br>Percent Filipino: 2%<br>Number of Students: 656","<b>olive vista middle<\/b><br>Percent Filipino: 1%<br>Number of Students: 897","<b>panorama city elementary<\/b><br>Percent Filipino: 1%<br>Number of Students: 443","<b>panorama high<\/b><br>Percent Filipino: 3%<br>Number of Students: 1316","<b>plummer elementary<\/b><br>Percent Filipino: 5%<br>Number of Students: 600","<b>PUC excel charter academy<\/b><br>Percent Filipino: 1%<br>Number of Students: 257","<b>PUC lakeview charter academy<\/b><br>Percent Filipino: 2%<br>Number of Students: 334","<b>purche avenue elementary<\/b><br>Percent Filipino: 1%<br>Number of Students: 373","<b>ranchito avenue elementary<\/b><br>Percent Filipino: 3%<br>Number of Students: 421","<b>rancho dominguez prepatory<\/b><br>Percent Filipino: 4%<br>Number of Students: 701","<b>richard e. byrd middle<\/b><br>Percent Filipino: 4%<br>Number of Students: 933","<b>richard henry dana middle<\/b><br>Percent Filipino: 1%<br>Number of Students: 1355","<b>robert e. peary middle<\/b><br>Percent Filipino: 2%<br>Number of Students: 1082","<b>rockdale visual & performing arts magnet<\/b><br>Percent Filipino: 7%<br>Number of Students: 325","<b>rosa parks learning center<\/b><br>Percent Filipino: 2%<br>Number of Students: 500","<b>rosemont avenue elementary<\/b><br>Percent Filipino: 17%<br>Number of Students: 157","<b>san pedro senior high<\/b><br>Percent Filipino: 2%<br>Number of Students: 2398","<b>santa monica boulevard community charter<\/b><br>Percent Filipino: 0%<br>Number of Students: 697","<b>school of business and tourism at contreras learning complex<\/b><br>Percent Filipino: 0%<br>Number of Students: 392","<b>sierra park elementary<\/b><br>Percent Filipino: 1%<br>Number of Students: 240","<b>sophia t. salvin special education center<\/b><br>Percent Filipino: 2%<br>Number of Students: 92","<b>south gate middle<\/b><br>Percent Filipino: 0%<br>Number of Students: 1192","<b>STEM academy at bernstein high<\/b><br>Percent Filipino: 3%<br>Number of Students: 599","<b>stephen m. white middle<\/b><br>Percent Filipino: 11%<br>Number of Students: 1423","<b>sylmar biotech health & engineering magnet<\/b><br>Percent Filipino: 1%<br>Number of Students: 205","<b>toland way elementary<\/b><br>Percent Filipino: 13%<br>Number of Students: 218","<b>towne avenue elementary<\/b><br>Percent Filipino: 5%<br>Number of Students: 288","<b>two hundred thirty second place elementary<\/b><br>Percent Filipino: 23%<br>Number of Students: 413","<b>UCLA community k-12<\/b><br>Percent Filipino: 4%<br>Number of Students: 887","<b>valley academy of arts and sciences<\/b><br>Percent Filipino: 6%<br>Number of Students: 757","<b>valley charter elementary<\/b><br>Percent Filipino: 4%<br>Number of Students: 295","<b>valor academy elementary<\/b><br>Percent Filipino: 3%<br>Number of Students: 387","<b>van deene avenue elementary<\/b><br>Percent Filipino: 12%<br>Number of Students: 320","<b>vine street elementary<\/b><br>Percent Filipino: 3%<br>Number of Students: 237","<b>virgil middle<\/b><br>Percent Filipino: 6%<br>Number of Students: 975","<b>vista middle<\/b><br>Percent Filipino: 3%<br>Number of Students: 1080","<b>walnut park elementary<\/b><br>Percent Filipino: 0%<br>Number of Students: 555","<b>washington irving middle school math<\/b><br>Percent Filipino: 4%<br>Number of Students: 909","<b>westport heights elementary<\/b><br>Percent Filipino: 5%<br>Number of Students: 166","<b>wilmington middle STEAM<\/b><br>Percent Filipino: 1%<br>Number of Students: 1121","<b>young oak kim academy<\/b><br>Percent Filipino: 1%<br>Number of Students: 715"],null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addLegend","args":[{"colors":["#000004 , #000004 0%, #1F114A 13.1578947368421%, #56147D 26.3157894736842%, #8A2981 39.4736842105263%, #C03A76 52.6315789473684%, #EF5D5E 65.7894736842105%, #FD9A6A 78.9473684210526%, #FED89A 92.1052631578947%, #FCFDBF "],"labels":["0%","5%","10%","15%","20%","25%","30%","35%"],"na_color":null,"na_label":"NA","opacity":0.5,"position":"bottomright","type":"numeric","title":"Percent Filipino","extra":{"p_1":0,"p_n":0.9210526315789475},"layerId":null,"className":"info legend","group":null}]}],"limits":{"lat":[33.7305752,34.31410101],"lng":[-118.7886,-118.0289901]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="presentation_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="presentation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="presentation_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="presentation_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="presentation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="presentation_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="presentation_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="presentation_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="presentation_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="presentation_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
