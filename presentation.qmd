@@ -27,7 +27,7 @@ library(tidyverse)
 install.packages("readxl")
 library(readxl)
 
-filipino_pop_df <- read_excel("copy_econstats.xlsx") 
+filipino_pop_df <- read_excel("copy_econstats_compressed.xlsx") 
 
 filipino_pop_df <- filipino_pop_df |>
   mutate(
