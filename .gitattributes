@@ -1,0 +1,2 @@
+path/to/largefile.ext filter=lfs diff=lfs merge=lfs -text
+copy_econstats.xlsx filter=lfs diff=lfs merge=lfs -text
