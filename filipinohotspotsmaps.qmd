@@ -1,0 +1,138 @@
+```{r}
+# background of map
+library(leaflet)
+library(dplyr)
+library(tidyverse)
+
+leaflet() |>
+  addProviderTiles(providers$OpenStreetMap) |> 
+  setView(lng = -118.25, lat = 34.05, zoom = 10)
+
+```
+
+
+```{r}
+#loading in data 
+install.packages("readxl")
+library(readxl)
+
+econ_stats <- read_excel("copy_econstats.xlsx") 
+
+```
+
+```{r}
+
+filipino_pop_df <- econ_stats
+
+filipino_pop_df
+
+```
+
+```{r}
+
+perc_values <- econ_stats_fifty$perc_enroll
+perc_values <- as.numeric(as.character(econ_stats_fifty$perc_enroll))
+perc_values <- as.numeric(perc_values)
+perc_values <- perc_values[!is.na(perc_values)]
+
+
+```
+
+
+```{r}
+perc_values <- econ_stats_fifty$perc_enroll
+perc_values <- as.numeric(as.character(econ_stats_fifty$perc_enroll))
+perc_values <- as.numeric(perc_values)
+perc_values <- perc_values[!is.na(perc_values)]
+
+
+
+long <- econ_stats_fifty$longtitude 
+long <- as.numeric(as.character(econ_stats_fifty$longtitude)) 
+long <- as.numeric(perc_long)
+long <- perc_long[!is.na(perc_long)]
+econ_stats_fifty$long <- as.numeric(as.character(econ_stats_fifty$longtitude))
+
+
+```
+
+```{r}
+econ_stats_fifty_select <- econ_stats_fifty |> 
+  select(school, lat, long, perc_enroll, num_enroll) |> 
+  mutate(long_num = as.numeric(long)) |> 
+  mutate(perc_enroll = as.numeric(perc_enroll)) |> 
+  filter(!is.na(long_num) & !is.na(perc_enroll))
+
+econ_stats_fifty_select
+```
+
+
+```{r} 
+econ_stats_fifty_select
+
+perc_values <- econ_stats_fifty_select$perc_enroll
+perc_values <- as.numeric(as.character(econ_stats_fifty_select$perc_enroll))
+perc_values <- as.numeric(perc_values)
+perc_values <- perc_values[!is.na(perc_values)]
+
+leaflet(econ_stats_fifty_select) |> 
+  addProviderTiles(providers$OpenStreetMap) |> 
+  addCircleMarkers(
+    lng = ~long_num,
+    lat = ~latitutde,
+    radius = ~perc_values * 50,   # scale size
+    fillColor = ~colorNumeric("Reds", perc_values)(perc_values),
+    fillOpacity = 0.7,
+    stroke = FALSE,
+    popup = ~paste0(
+      "<b>", school, "</b><br>",
+      "Percent Filipino: ", round(perc_values * 100, 1), "%",
+      "\n Number of Students: ", num_enroll
+    )
+  ) |> 
+  addLegend(
+    "bottomright",
+    pal = colorNumeric("Reds", perc_values),
+    values = econ_stats_fifty$perc_values,
+    title = "Percent Filipino",
+    labFormat = labelFormat(suffix = "%", transform = function(x) 100*x)
+  )
+
+```
+
+
+```{r}
+filipino_pop_df <- filipino_pop_df |>
+  mutate(
+    perc_num = as.numeric(perc_enroll),     # convert correctly
+    long_num = as.numeric(long),        # ensure numeric
+    lat_num  = as.numeric(lat)        # ensure numeric
+  )
+
+pal <- colorNumeric("magma", filipino_pop_df$perc_num)
+
+m <- leaflet(filipino_pop_df) |>
+  addProviderTiles(providers$OpenStreetMap) |>
+  addCircleMarkers(
+    lng = ~long_num,
+    lat = ~lat_num,
+    radius = ~perc_num * 100,
+    fillColor = ~pal(perc_num),
+    fillOpacity = 0.8,
+    stroke = FALSE,
+    popup = ~paste0(
+      "<b>", school, "</b><br>",
+      "Percent Filipino: ", round(perc_num * 100, 1), "%<br>",
+      "Number of Students: ", num_enroll
+    )
+  ) |>
+  addLegend(
+    "bottomright",
+    pal = pal,
+    values = ~perc_num,
+    title = "Percent Filipino",
+    labFormat = labelFormat(suffix = "%", transform = function(x) 100 * x)
+  )
+
+```
+
