@@ -12,3 +12,59 @@ format: revealjs
 Hello World!
 
 --- 
+
+# Slide 2
+
+Here is a plot:
+
+```{r}
+
+library(leaflet)
+library(dplyr)
+library(tidyverse)
+
+#loading in data 
+install.packages("readxl")
+library(readxl)
+
+filipino_pop_df <- read_excel("copy_econstats.xlsx") 
+
+filipino_pop_df <- filipino_pop_df |>
+  mutate(
+    perc_num = as.numeric(perc_enroll),     # convert correctly
+    long_num = as.numeric(long),        # ensure numeric
+    lat_num  = as.numeric(lat)        # ensure numeric
+  )
+
+filipino_pop_df <- filipino_pop_df |> 
+  filter(!is.na(lat), !is.na(long),
+         lat <= 90, lat >= -90,
+         long <= 180, long >= -180)
+
+pal <- colorNumeric("magma", filipino_pop_df$perc_num)
+
+m <- leaflet(filipino_pop_df) |>
+  addProviderTiles(providers$OpenStreetMap) |>
+  addCircleMarkers(
+    lng = ~long_num,
+    lat = ~lat_num,
+    radius = ~perc_num * 100,
+    fillColor = ~pal(perc_num),
+    fillOpacity = 0.8,
+    stroke = FALSE,
+    popup = ~paste0(
+      "<b>", school, "</b><br>",
+      "Percent Filipino: ", round(perc_num * 100, 1), "%<br>",
+      "Number of Students: ", num_enroll
+    )
+  ) |>
+  addLegend(
+    "bottomright",
+    pal = pal,
+    values = ~perc_num,
+    title = "Percent Filipino",
+    labFormat = labelFormat(suffix = "%", transform = function(x) 100 * x)
+  )
+
+m
+```
