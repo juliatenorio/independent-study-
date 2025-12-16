@@ -1,7 +1,0 @@
-project:
-  type: website   # or document
-output-dir: docs  # must be at top level
-format:
-  ioslides:        # your presentation format
-    toc: true
-    

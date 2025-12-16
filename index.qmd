@@ -3,6 +3,7 @@ options(repos = c(CRAN = "[https://cloud.r-project.org](https://cloud.r-project.
 ```
 
 ---
+page-layout: full
 format: revealjs
 ---
 
