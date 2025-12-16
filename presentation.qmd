@@ -3,19 +3,10 @@ options(repos = c(CRAN = "[https://cloud.r-project.org](https://cloud.r-project.
 ```
 
 ---
-title: "ASAM-199R Contemporary Filipino Diaspora Data"
 format: revealjs
 ---
 
-# Slide 1
-
-Hello World!
-
---- 
-
-# Slide 2
-
-Here is a plot:
+## Filipino Population Hotspots 
 
 ```{r}
 
@@ -68,3 +59,5 @@ m <- leaflet(filipino_pop_df) |>
 
 m
 ```
+
+Figure 3. An interactive map showcasing the percentages of Filipino populations of high schools in the Southern California area. 
