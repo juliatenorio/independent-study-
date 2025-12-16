@@ -4,7 +4,6 @@ options(repos = c(CRAN = "[https://cloud.r-project.org](https://cloud.r-project.
 
 ---
 format: revealjs
-output-dir: docs   # <-- output folder
 ---
 
 ## Filipino Population Hotspots 
